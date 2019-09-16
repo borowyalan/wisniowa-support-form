@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-import WisniowaForm from './WisniowaForm'
+import Form from './Form'
 import Header from './Header/';
 import Footer from './Footer/';
 
 function App() {
+
+  
   return (
     <div className="App">
-        <Header/>
-            <WisniowaForm/>
+        <Header />
+        <Form/>
         <Footer/>
     </div>
   );

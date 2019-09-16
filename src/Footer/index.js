@@ -11,7 +11,7 @@ const FooterContainer = styled.div`
     display: flex;
     align-items: center;
     padding-left: 10vw;
-    min-height: 9vh;
+    min-height: 12vh;
 
     color: white;
     background-color: black;

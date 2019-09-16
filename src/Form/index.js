@@ -1,10 +1,10 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styled from 'styled-components/macro'
+import * as F from 'formik';
 
-const FormikComponent = () => {
+const Form = () => {
     return (
-    <Formik
+    <F.Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {
         let errors = {};
@@ -37,25 +37,42 @@ const FormikComponent = () => {
         <StyledForm>
             <FieldContainer>
                 <FieldName> Imię i Nazwisko</FieldName>
-                <InputField type='name' name='name'/>
+                <InputField 
+                    type='name' 
+                    name='name'
+                    placeholder='Janek'
+                    />
                 <Divisor/>       
             </FieldContainer>
 
             <FieldContainer>
                 <FieldName> E-mail </FieldName>
-                <InputField type='email' name='email'/>
+                <InputField 
+                    type='email' 
+                    name='email'
+                    placeholder='example@gmail.com'
+                    />
                 <Divisor/>
             </FieldContainer>
 
             <FieldContainer>
                 <FieldName>Klasa</FieldName>
-                <InputField type='class' name='class'/>
+                <InputField 
+                    type='class' 
+                    name='class'
+                    placeholder='5TM4'
+                    />
                 <Divisor/>
             </FieldContainer>
 
             <FieldContainer>
                 <FieldName> Problem / Sugestia </FieldName>
-                <InputField type='problem' name='problem'/>
+                <SuggestionInputField 
+                    type='problem' 
+                    name='problem'
+                    component='textarea'
+                    placeholder='...'
+                    />
                 <Divisor/>
             </FieldContainer>
           
@@ -64,14 +81,14 @@ const FormikComponent = () => {
           </SubmitButton>
         </StyledForm>
       )}
-
-    </Formik>
+    </F.Formik>
     );
 }
 
-const StyledForm = styled(Form)`
+const StyledForm = styled(F.Form)`
     display: flex;
     flex-direction: column;
+    align-items: center;
 `
 
 const FieldContainer = styled.div`
@@ -79,19 +96,20 @@ const FieldContainer = styled.div`
     flex-direction: column;
     align-items: space-between;
 
-    padding: 34px;
+    width: 65vw;
+
+    padding: 24px;
 `;
 
 const FieldName = styled.div`
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-family: 'Aleo';
     font-weight: 700;
 
     text-align: left;
 `;
 
-const InputField = styled(Field)`
-
+const InputField = styled(F.Field)`
     font-size: 1.4em;
 
     border: none;
@@ -101,6 +119,14 @@ const InputField = styled(Field)`
     margin: 0.2em;
     margin-bottom: -0.2em;
     margin-left: 0;
+`;
+
+const SuggestionInputField = styled(InputField)`
+    border: solid 0.2px black;
+    outline: none;
+    padding: 0.5em 0.5em;
+    min-height: 8em;
+    margin: 1em 0;
 `;
 
 const Divisor = styled.div`
@@ -115,16 +141,19 @@ const SubmitButton = styled.button`
     align-self: center;
 
     padding: 0.3em;
-    margin: 1.3em;
+    margin: 1.1em;
+    margin-top: 0.5em;
 
     background-color: #FF0000;
     color: white;
+    outline: none;
     border-radius: 5px;
     border: none;
     
-    font-family: 'Aleo, bold';
+    font-family: 'Aleo';  
     font-size: 2em;
     font-weight: bold;
 `;
 
-export default FormikComponent;
+
+export default Form;

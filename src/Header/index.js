@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/macro'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 const Header = () => {
+
+    // useScrollPosition(({ prevPos, currPos}) => {
+    //     const isVisible = currPos > prevPos  
+    // })
+
     return (
         <HeaderContainer>
             <HeaderText> Wiśniowa Support&nbsp;Form</HeaderText>
@@ -18,8 +24,8 @@ const HeaderContainer = styled.div`
     
     height: 14vh;
 
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     /* @TODO */
     ${'' /* for desktop view
     @media {
@@ -31,8 +37,8 @@ const HeaderContainer = styled.div`
 
 const HeaderText = styled.h1`
     margin: 0;
-    max-width: 80vw;
+    max-width: 90vw;
     font-family: 'Aleo';
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2.7em;
 `

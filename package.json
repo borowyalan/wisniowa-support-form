@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^1.0.35",
     "babel-plugin-macros": "^2.6.1",
     "formik": "^1.5.8",
     "react": "^16.9.0",
